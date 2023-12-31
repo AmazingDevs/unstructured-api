@@ -1,0 +1,23 @@
+{
+    "name": "unstructured-api",
+    "description": "deploy unstructured-api to heroku without any hassle",
+    "keywords": [
+      "unstructured-api"
+    ],
+    "repository": "https://github.com/Unstructured-IO/unstructured-api",
+    "success_url": "/",
+    "stack": "container",
+    "env": {      
+    },
+    "formation": {
+      "web": {
+        "quantity": 1,
+        "size": "eco"
+      }
+    },
+    "addons": [      
+      {
+        "plan": "papertrail:choklad"
+      }
+    ]
+  }
