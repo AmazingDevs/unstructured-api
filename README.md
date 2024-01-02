@@ -2,7 +2,7 @@
 Use your local machine to prevent nltk errors on Heroku
 
 heroku git:remote -a amzd-unstructured-api
-heroku buildpacks:set heroku/python
+heroku stack:set container
 git push heroku main
 
 <h3 align="center">
