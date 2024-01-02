@@ -1,3 +1,10 @@
+## DEPLOYMENT
+Use your local machine to prevent nltk errors on Heroku
+
+heroku git:remote -a amzd-unstructured-api
+heroku buildpacks:set heroku/python
+git push heroku main
+
 <h3 align="center">
   <img src="img/unstructured_logo.png" height="200">
 </h3>
