@@ -11,6 +11,7 @@ ARG PIPELINE_PACKAGE=temp
 # Set up environment
 ENV USER ${NB_USER}
 ENV HOME /home/${NB_USER}
+ENV PORT=8000
 
 RUN groupadd --gid ${NB_UID} ${NB_USER}
 RUN useradd --uid ${NB_UID} --gid ${NB_UID} ${NB_USER}
