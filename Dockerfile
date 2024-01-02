@@ -6,7 +6,7 @@ FROM quay.io/unstructured-io/base-images:rocky9.2-9@sha256:9e3cbfd93ba940fff2d5f
 ARG NB_USER=notebook-user
 ARG NB_UID=1000
 ARG PIP_VERSION=23.3.2
-ARG PIPELINE_PACKAGE=temp
+ARG PIPELINE_PACKAGE=general
 
 # Set up environment
 ENV USER ${NB_USER}
@@ -40,7 +40,7 @@ RUN python3.10 -c "import nltk; nltk.download('punkt')" && \
 FROM model-deps as code
 COPY CHANGELOG.md CHANGELOG.md
 COPY logger_config.yaml logger_config.yaml
-COPY prepline_${PIPELINE_PACKAGE}/ prepline_${PIPELINE_PACKAGE}/
+COPY prepline_general/ prepline_general/
 COPY exploration-notebooks exploration-notebooks
 COPY scripts/app-start.sh scripts/app-start.sh
 
