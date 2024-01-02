@@ -24,7 +24,7 @@ FROM base as python-deps
 COPY requirements/base.txt requirements-base.txt
 RUN python3.10 -m pip install pip==23.3.2 \
   && dnf -y groupinstall "Development Tools" \
-  && sudo -c 'pip3.10 install  --no-cache  -r requirements-base.txt' \
+  && pip3.10 install  --no-cache  -r requirements-base.txt \
   && dnf -y groupremove "Development Tools" \
   && dnf clean all \
   && ln -s /home/notebook-user/.local/bin/pip3.10 /usr/local/bin/pip3.10 || true 
